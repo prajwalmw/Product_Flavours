@@ -1,0 +1,110 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+android {
+
+    def version = "version"
+    def server = "server"
+    flavorDimensions = [version, server]
+
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd")
+    def date = df.format(new Date())
+
+    productFlavors {
+        // version - product flavour
+        demo {
+            dimension version
+            isDefault = true
+            applicationIdSuffix ".demo"
+            archivesBaseName = "demo- " + versionName + " - " + date
+        }
+
+        paid {
+            dimension version
+            applicationIdSuffix ".paid"
+            versionName '2.0'
+            versionCode 2
+            archivesBaseName = "paid- " + versionName + " - " + date
+        }
+
+        // server - product flavour
+        dev {
+            dimension server
+            buildConfigField "boolean", "ACTIVE_CRASH", "false"
+        }
+
+        stage {
+            dimension server
+            buildConfigField "boolean", "ACTIVE_CRASH", "true"
+        }
+
+        production {
+            dimension server
+            buildConfigField "boolean", "ACTIVE_CRASH", "true"
+        }
+
+    }
+
+    applicationVariants.configureEach {
+        def name = it.name
+        def domain
+
+        // version
+        if (name.contains("demo")) {
+            domain = "DEMO"
+        } else {
+            domain = "PAID"
+        }
+
+        // server
+        if (name.contains("dev")) {
+            domain = domain.concat("_").concat("DEV")
+        } else if (name.contains("staging")) {
+            domain = domain.concat("_").concat("STAGE")
+        } else if (name.contains("production")) {
+            domain = domain.concat("_").concat("PROD")
+        }
+
+        // function call
+        buildVariantConfigField(domain, it)
+    }
+}
+// outside of android{}
+// Generating different type of endpoint base on selected variant or app
+
+def buildVariantConfigField(versionServer, variant) {
+    versionServer = versionServer.concat("_")
+
+    def serverUrl = "SERVER_URL"
+
+    def endPointPropertyFile = file('../enpoint.properties')
+    def property = new Properties()
+
+    if (endPointPropertyFile.canRead()) {   // reading from the properties file
+        property.load(new FileInputStream(endPointPropertyFile))
+    }
+
+   // def buildServerUrl = property[versionServer + serverUrl].tostring()
+    def buildServerUrl = property[versionServer + serverUrl].toString()
+    variant.buildConfigField "String", serverUrl, buildServerUrl    // setting value here.
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
