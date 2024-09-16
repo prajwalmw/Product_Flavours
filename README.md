@@ -9,11 +9,13 @@ It containts different:
 ---------------------------------------------------------------------------------------------------------
 
 Screenshots:
-<img width="653" alt="image" src="https://github.com/user-attachments/assets/46245d2e-7908-4a02-bfb6-6515d79beb1a">
+- Same app with different flavors.
+  
+  <img width="653" alt="image" src="https://github.com/user-attachments/assets/46245d2e-7908-4a02-bfb6-6515d79beb1a">
 
 
 - Same Activity with different CODE being called based on built flavor.
-<img width="653" alt="image" src="https://github.com/user-attachments/assets/457bfcde-5002-49b8-9748-d6ec7c24dd8e">
+  <img width="653" alt="image" src="https://github.com/user-attachments/assets/457bfcde-5002-49b8-9748-d6ec7c24dd8e">
 
 
 
