@@ -9,7 +9,12 @@ It containts different:
 ---------------------------------------------------------------------------------------------------------
 
 Screenshots:
-![Screenshot_20240916_210928_One UI Home](https://github.com/user-attachments/assets/fe08ec72-9928-4bfa-bd69-9b7f04f06c1c)
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/46245d2e-7908-4a02-bfb6-6515d79beb1a">
+
+
+- Same Activity with different CODE being called based on built flavor.
+<img width="653" alt="image" src="https://github.com/user-attachments/assets/457bfcde-5002-49b8-9748-d6ec7c24dd8e">
+
 
 
 FYR: https://docs.google.com/document/d/1zcawPpyAix6WYFmL34WTK4DA3B3m-lX7Fe7-zmOpgpk/edit?usp=sharing
