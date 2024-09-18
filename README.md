@@ -20,7 +20,7 @@ Screenshots:
 
 ---------------------------------------------------------------------------------------------------------
 
-If you want to include a specific module only in your Demo variant than you can do so in the following way:
+- If you want to include a specific module only in your Demo variant than you can do so in the following way:
 
 <img width="824" alt="image" src="https://github.com/user-attachments/assets/8324dec2-e4d2-48cf-a071-4c133b67e6ad">
 
